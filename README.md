@@ -23,7 +23,7 @@ Clone o repositório para sua máquina local:
 
 ```bash
 git clone <url-do-repositorio>
-cd projeto2
+cd <nome-do-repositorio>
 ```
 
 ### 2. Executando a Aplicação com Docker Compose
@@ -88,7 +88,7 @@ docker-compose down -v
 - **Versão**: PostgreSQL 15
 - **Credenciais**:
   - Usuário: postgres
-  - Senha: senhaForte
+  - Senha: <no arquivo de configuração>
   - Banco de dados: techcorp
 
 ## Estrutura do Banco de Dados
