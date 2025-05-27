@@ -1,0 +1,27 @@
+services:
+  backend:
+    build: ./TechCorpApi
+    ports:
+      - "3001:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Host=db;Port=5432;Database=techcorp;Username=postgres;Password=senhaForte
+    depends_on:
+      - db
+
+  frontend:
+    build: ./frontend
+    ports:
+      - '3000:3000'
+    depends_on:
+      - backend
+
+  db:
+    image: postgres:15
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: senhaForte
+      POSTGRES_DB: techcorp
+    ports:
+      - '5432:5432'
